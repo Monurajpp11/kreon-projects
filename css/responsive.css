@@ -1,0 +1,603 @@
+/* ========================================
+   KREON PROJECTS — Comprehensive Responsive
+   All devices: iPhone SE to Ultra-wide
+   ======================================== */
+
+/* ---- iOS / Apple specific fixes ---- */
+html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Prevent iOS zoom on form focus */
+@supports (-webkit-touch-callout: none) {
+
+    input,
+    textarea,
+    select {
+        font-size: 16px !important;
+    }
+}
+
+/* Safe area for iPhone notch (X, 11, 12, 13, 14, 15, 16) */
+body {
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+.navbar {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+}
+
+.floating-cta {
+    bottom: -80px;
+}
+
+.floating-cta.visible {
+    bottom: calc(30px + env(safe-area-inset-bottom));
+}
+
+/* ---- Ultra-wide Desktop (1600px+) ---- */
+@media (min-width: 1600px) {
+    :root {
+        --container-max: 1400px;
+    }
+
+    .hero-content {
+        max-width: 800px;
+    }
+
+    .hero-stat-num {
+        font-size: 3rem;
+    }
+}
+
+/* ---- Desktop (1280-1599px) — base, no changes ---- */
+
+/* ---- Small Desktop / Large Tablet Landscape (1024-1279px) ---- */
+@media (max-width: 1279px) {
+    .nav-links {
+        gap: var(--sp-md);
+    }
+
+    .nav-links a {
+        font-size: var(--fs-xs);
+        letter-spacing: 1px;
+    }
+
+    .calc-layout {
+        gap: var(--sp-lg);
+    }
+}
+
+/* ---- Tablet Landscape / iPad Pro (900-1023px) ---- */
+@media (max-width: 1023px) {
+    .hero-stats {
+        gap: var(--sp-lg);
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+        gap: var(--sp-lg);
+    }
+
+    .why-image {
+        order: -1;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .portfolio-peek-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .calc-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .calc-preview {
+        position: static;
+    }
+
+    .blog-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .blog-sidebar {
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .blog-sidebar .sidebar-card {
+        flex: 1;
+        min-width: 260px;
+    }
+
+    .breakdown-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ---- Tablet Portrait / iPad (768-899px) ---- */
+@media (max-width: 899px) {
+    :root {
+        --sp-xxl: 4rem;
+    }
+
+    .section {
+        padding: var(--sp-xl) 0;
+    }
+
+    /* Featured blog */
+    .featured-post {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-img img {
+        min-height: 220px;
+        max-height: 300px;
+    }
+
+    /* Blog grid */
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .blog-sidebar {
+        flex-direction: column;
+    }
+
+    .blog-sidebar .sidebar-card {
+        min-width: auto;
+    }
+
+    /* Process timeline */
+    .process-timeline {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .process-line {
+        width: 2px;
+        height: 40px;
+        flex: 0 0 40px;
+        margin-top: 0;
+        background: linear-gradient(180deg, var(--clr-accent), rgba(201, 168, 76, .2));
+    }
+
+    /* Gallery */
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Contact */
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info {
+        order: -1;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .contact-info .info-card {
+        flex: 1;
+        min-width: 200px;
+    }
+}
+
+/* ---- Large Phone / Small Tablet (640-767px) ---- */
+@media (max-width: 767px) {
+    :root {
+        --sp-xl: 3rem;
+        --sp-xxl: 3.5rem;
+    }
+
+    .hero-title {
+        font-size: clamp(2rem, 8vw, 3rem);
+    }
+
+    .hero-desc {
+        font-size: 1rem;
+    }
+
+    .hero-btns {
+        flex-direction: column;
+    }
+
+    .hero-btns .btn {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .hero-stats {
+        flex-wrap: wrap;
+        gap: var(--sp-md);
+    }
+
+    .hero-stat {
+        flex: 0 0 auto;
+    }
+
+    .hero-scroll {
+        display: none;
+    }
+
+    /* Room type grid */
+    .room-type-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Quality options */
+    .quality-options {
+        flex-direction: column;
+    }
+
+    /* CTA Banner */
+    .cta-banner {
+        padding: var(--sp-lg);
+    }
+
+    .cta-banner h2 {
+        font-size: var(--fs-h3);
+    }
+
+    /* Glass Card — disable hover on touch */
+    .glass-card:hover {
+        transform: none;
+    }
+
+    /* Testimonial */
+    .testimonial-text {
+        font-size: 1rem;
+    }
+}
+
+/* ---- Phone (480-639px) ---- */
+@media (max-width: 639px) {
+    .hero-content {
+        padding: calc(var(--sp-xxl) + 30px) 0 var(--sp-lg);
+    }
+
+    .hero-stat-num {
+        font-size: 2rem;
+    }
+
+    .portfolio-peek-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--sp-xs);
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: var(--sp-sm);
+    }
+
+    /* Contact info stack */
+    .contact-info {
+        flex-direction: column;
+    }
+
+    .contact-info .info-card {
+        min-width: auto;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    /* Page hero spacing */
+    .page-hero {
+        padding: calc(var(--sp-xl) + 70px) 0 var(--sp-lg);
+    }
+
+    .page-hero h1 {
+        font-size: var(--fs-h2);
+    }
+
+    /* Floating CTA */
+    .floating-cta {
+        font-size: var(--fs-xs);
+        padding: 12px 24px;
+        gap: 8px;
+    }
+
+    /* Room 3D preview */
+    .room-3d {
+        height: 250px;
+    }
+
+    /* Room type grid */
+    .room-type-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Live cost smaller */
+    .amount {
+        font-size: 2.4rem;
+    }
+
+    /* Lightbox */
+    .lightbox-img {
+        max-width: 95vw;
+        max-height: 70vh;
+    }
+
+    .lightbox-nav {
+        width: 36px;
+        height: 36px;
+    }
+
+    .lightbox-prev {
+        left: 8px;
+    }
+
+    .lightbox-next {
+        right: 8px;
+    }
+
+    .lightbox-caption {
+        font-size: var(--fs-body);
+        bottom: 20px;
+    }
+}
+
+/* ---- Small Phone / iPhone SE (320-479px) ---- */
+@media (max-width: 479px) {
+    :root {
+        --sp-lg: 2rem;
+        --sp-xl: 2.5rem;
+        --sp-xxl: 3rem;
+        --container-pad: 1rem;
+    }
+
+    .nav-logo span {
+        font-size: 1rem;
+    }
+
+    .nav-logo svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    .hero-subtitle {
+        font-size: var(--fs-xs);
+        letter-spacing: 2px;
+    }
+
+    .hero-title {
+        font-size: clamp(1.8rem, 8vw, 2.5rem);
+    }
+
+    .hero-stats {
+        flex-direction: column;
+        gap: var(--sp-sm);
+        align-items: flex-start;
+    }
+
+    .hero-stat {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+    }
+
+    .hero-stat-num {
+        font-size: 1.8rem;
+    }
+
+    .hero-stat-label {
+        font-size: 10px;
+    }
+
+    /* Service cards compact */
+    .service-card,
+    .svc-card {
+        padding: var(--sp-md);
+    }
+
+    .service-icon,
+    .svc-icon-wrap {
+        width: 56px;
+        height: 56px;
+    }
+
+    /* Section headers */
+    .section-header h2 {
+        font-size: var(--fs-h3);
+    }
+
+    /* Portfolio grid single col */
+    .portfolio-peek-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Testimonial compact */
+    .testimonial-card {
+        padding: var(--sp-md);
+    }
+
+    .testimonial-text {
+        font-size: var(--fs-small);
+        line-height: 1.7;
+    }
+
+    .testimonial-avatar {
+        width: 40px;
+        height: 40px;
+        font-size: var(--fs-xs);
+    }
+
+    /* Blog card */
+    .blog-card-body {
+        padding: var(--sp-sm);
+    }
+
+    /* Calculator controls */
+    .calc-card {
+        padding: var(--sp-md);
+    }
+
+    .area-control {
+        flex-direction: column;
+        gap: var(--sp-sm);
+    }
+
+    .area-display {
+        text-align: center;
+    }
+
+    .area-presets {
+        justify-content: center;
+    }
+
+    .addon-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+    }
+
+    /* Breakdown */
+    .breakdown-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--sp-sm);
+    }
+
+    .breakdown-section {
+        padding: var(--sp-md);
+    }
+
+    .breakdown-total {
+        flex-direction: column;
+        gap: var(--sp-xs);
+        text-align: center;
+    }
+
+    /* Contact form */
+    .contact-form-wrap {
+        padding: var(--sp-md);
+    }
+
+    .info-card {
+        padding: var(--sp-md);
+    }
+
+    /* Buttons */
+    .btn {
+        padding: 12px 24px;
+        font-size: var(--fs-xs);
+        letter-spacing: 1px;
+    }
+
+    .btn-submit {
+        padding: 14px 24px;
+    }
+
+    /* CTA banner */
+    .cta-banner {
+        padding: var(--sp-md);
+    }
+
+    .cta-banner h2 {
+        font-size: 1.2rem;
+    }
+
+    /* Footer compact */
+    .footer {
+        padding: var(--sp-xl) 0 var(--sp-md);
+    }
+
+    .footer h4 {
+        font-size: var(--fs-small);
+        margin-bottom: var(--sp-sm);
+    }
+
+    /* Floating CTA even smaller */
+    .floating-cta {
+        padding: 10px 20px;
+        font-size: 11px;
+        letter-spacing: 0.5px;
+    }
+}
+
+/* ---- Touch Device Enhancements ---- */
+@media (hover: none) and (pointer: coarse) {
+
+    /* Disable hover effects on touch — prevent sticky hover state */
+    .glass-card:hover {
+        transform: none;
+        box-shadow: var(--shadow-card);
+        border-color: var(--clr-glass-border);
+    }
+
+    .btn-primary:hover {
+        transform: none;
+    }
+
+    .btn-outline:hover {
+        transform: none;
+    }
+
+    /* Make tap targets bigger on touch */
+    .nav-links a {
+        padding: 8px 4px;
+    }
+
+    .filter-tab {
+        padding: 12px 20px;
+    }
+
+    .footer-links a {
+        padding: 10px 0;
+    }
+
+    /* Gallery overlay always visible on touch */
+    .gallery-overlay {
+        opacity: 1;
+        background: linear-gradient(transparent 50%, rgba(10, 10, 18, .85));
+    }
+}
+
+/* ---- Landscape Phone ---- */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: 100px 0 40px;
+    }
+
+    .hero-stats {
+        flex-direction: row;
+        gap: var(--sp-lg);
+    }
+
+    .page-hero {
+        padding: calc(80px + var(--sp-md)) 0 var(--sp-sm);
+    }
+}
+
+/* ---- Print Styles ---- */
+@media print {
+
+    .navbar,
+    .floating-cta,
+    .hamburger {
+        display: none !important;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    .glass-card {
+        background: white;
+        border: 1px solid #ddd;
+        backdrop-filter: none;
+    }
+
+    .section {
+        padding: 1rem 0;
+    }
+}

@@ -101,6 +101,7 @@
     background: rgba(201, 168, 76, .15);
     border: 1px solid var(--clr-accent);
     color: var(--clr-accent);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     transition: all var(--dur-fast);
 }
@@ -122,6 +123,7 @@
     opacity: 0;
     pointer-events: none;
     transition: opacity var(--dur-normal);
+    -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
 }
 
