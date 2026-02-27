@@ -1,0 +1,135 @@
+/* ========================================
+   KREON PROJECTS — Services Page Styles
+   ======================================== */
+
+/* ---- Service Cards ---- */
+.svc-card {
+    position: relative;
+    padding: var(--sp-xl) var(--sp-lg) var(--sp-lg);
+    overflow: hidden;
+}
+
+.svc-number {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    font-family: var(--ff-heading);
+    font-size: 3rem;
+    font-weight: var(--fw-bold);
+    color: rgba(201, 168, 76, .06);
+    line-height: 1;
+}
+
+.svc-icon-wrap {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    background: rgba(201, 168, 76, .08);
+    color: var(--clr-accent);
+    border: 1px solid rgba(201, 168, 76, .12);
+    margin-bottom: var(--sp-md);
+}
+
+.svc-card h3 {
+    margin-bottom: var(--sp-xs);
+}
+
+.svc-card>p {
+    font-size: var(--fs-small);
+    margin-bottom: var(--sp-md);
+}
+
+.svc-features {
+    margin-bottom: var(--sp-md);
+}
+
+.svc-features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 0;
+    font-size: var(--fs-small);
+    color: var(--clr-muted);
+}
+
+.svc-features li::before {
+    content: '✦';
+    color: var(--clr-accent);
+    font-size: 0.7rem;
+}
+
+/* ---- Process Timeline ---- */
+.process-timeline {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0;
+    position: relative;
+}
+
+.process-step {
+    flex: 1;
+    text-align: center;
+    padding: 0 var(--sp-sm);
+    position: relative;
+}
+
+.process-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto var(--sp-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-full);
+    background: rgba(201, 168, 76, .08);
+    border: 2px solid var(--clr-accent);
+    color: var(--clr-accent);
+    position: relative;
+    z-index: 2;
+}
+
+.process-num {
+    font-family: var(--ff-heading);
+    font-weight: var(--fw-bold);
+    color: var(--clr-accent);
+    font-size: var(--fs-small);
+    margin-bottom: 6px;
+}
+
+.process-step h3 {
+    font-size: var(--fs-body);
+    margin-bottom: 6px;
+}
+
+.process-step p {
+    font-size: var(--fs-small);
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+.process-line {
+    flex: 0 0 40px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--clr-accent), rgba(201, 168, 76, .2));
+    margin-top: 32px;
+    align-self: flex-start;
+}
+
+@media (max-width: 768px) {
+    .process-timeline {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .process-line {
+        width: 2px;
+        height: 40px;
+        flex: 0 0 40px;
+        margin-top: 0;
+        background: linear-gradient(180deg, var(--clr-accent), rgba(201, 168, 76, .2));
+    }
+}

@@ -1,0 +1,81 @@
+/* ========================================
+   KREON PROJECTS — Design Tokens
+   ======================================== */
+
+:root {
+  /* ---- Palette ---- */
+  --clr-bg:        #0A0A12;
+  --clr-surface:   #12121E;
+  --clr-surface-2: #1A1A2E;
+  --clr-accent:    #C9A84C;
+  --clr-accent-hover: #E2C36B;
+  --clr-accent-glow: rgba(201, 168, 76, .25);
+  --clr-text:      #F5F5F5;
+  --clr-muted:     #9A9AB0;
+  --clr-white:     #FFFFFF;
+  --clr-border:    rgba(255, 255, 255, .08);
+  --clr-glass:     rgba(255, 255, 255, .04);
+  --clr-glass-border: rgba(255, 255, 255, .1);
+  --clr-overlay:   rgba(10, 10, 18, .85);
+
+  /* ---- Typography ---- */
+  --ff-heading: 'Playfair Display', serif;
+  --ff-body:    'Inter', sans-serif;
+  --fs-hero:    clamp(2.8rem, 6vw, 5.5rem);
+  --fs-h1:      clamp(2rem, 4vw, 3.5rem);
+  --fs-h2:      clamp(1.6rem, 3vw, 2.5rem);
+  --fs-h3:      clamp(1.2rem, 2vw, 1.6rem);
+  --fs-body:    1rem;
+  --fs-small:   0.875rem;
+  --fs-xs:      0.75rem;
+  --lh-body:    1.7;
+  --lh-heading: 1.15;
+  --fw-light:   300;
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-semi:    600;
+  --fw-bold:    700;
+
+  /* ---- Spacing ---- */
+  --sp-xs:  0.5rem;
+  --sp-sm:  1rem;
+  --sp-md:  1.5rem;
+  --sp-lg:  2.5rem;
+  --sp-xl:  4rem;
+  --sp-xxl: 6rem;
+
+  /* ---- Borders ---- */
+  --radius-sm:   8px;
+  --radius-md:   12px;
+  --radius-lg:   20px;
+  --radius-pill:  50px;
+  --radius-full: 50%;
+
+  /* ---- Shadows ---- */
+  --shadow-card:  0 8px 32px rgba(0, 0, 0, .4);
+  --shadow-hover: 0 16px 48px rgba(201, 168, 76, .15);
+  --shadow-glow:  0 0 30px rgba(201, 168, 76, .2);
+
+  /* ---- Glass ---- */
+  --glass-blur:    blur(20px);
+  --glass-bg:      rgba(18, 18, 30, .6);
+  --glass-bg-nav:  rgba(10, 10, 18, .75);
+
+  /* ---- Transitions ---- */
+  --ease-smooth:  cubic-bezier(.4, 0, .2, 1);
+  --ease-bounce:  cubic-bezier(.68, -.55, .27, 1.55);
+  --dur-fast:     .2s;
+  --dur-normal:   .35s;
+  --dur-slow:     .6s;
+
+  /* ---- Z-Index ---- */
+  --z-base:      1;
+  --z-sticky:    100;
+  --z-nav:       1000;
+  --z-overlay:   2000;
+  --z-modal:     3000;
+
+  /* ---- Container ---- */
+  --container-max: 1280px;
+  --container-pad: clamp(1rem, 4vw, 2rem);
+}

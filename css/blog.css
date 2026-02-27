@@ -1,0 +1,236 @@
+/* ========================================
+   KREON PROJECTS — Blog Page Styles
+   ======================================== */
+
+/* ---- Blog Layout ---- */
+.blog-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: var(--sp-xl);
+    align-items: start;
+}
+
+/* ---- Featured Post ---- */
+.featured-post {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.featured-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.featured-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    min-height: 340px;
+    transition: transform var(--dur-slow);
+}
+
+.featured-post:hover .featured-img img {
+    transform: scale(1.04);
+}
+
+.featured-content {
+    padding: var(--sp-xl);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.featured-content h2 {
+    font-size: var(--fs-h3);
+    margin-bottom: var(--sp-sm);
+}
+
+.featured-content p {
+    margin-bottom: var(--sp-md);
+    font-size: var(--fs-small);
+}
+
+/* ---- Blog Meta ---- */
+.blog-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-sm);
+    margin-bottom: var(--sp-sm);
+    font-size: var(--fs-xs);
+}
+
+.blog-category {
+    color: var(--clr-accent);
+    font-weight: var(--fw-semi);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.blog-date {
+    color: var(--clr-muted);
+}
+
+.blog-tag {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    padding: 4px 14px;
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-semi);
+    background: linear-gradient(135deg, var(--clr-accent), #D4AF37);
+    color: var(--clr-bg);
+    border-radius: var(--radius-pill);
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    z-index: 2;
+}
+
+/* ---- Blog Grid ---- */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-md);
+}
+
+.blog-card {
+    padding: 0;
+    overflow: hidden;
+}
+
+.blog-card-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-card-img img {
+    width: 100%;
+    aspect-ratio: 16/10;
+    object-fit: cover;
+    transition: transform var(--dur-slow);
+}
+
+.blog-card:hover .blog-card-img img {
+    transform: scale(1.05);
+}
+
+.blog-card-body {
+    padding: var(--sp-md) var(--sp-lg) var(--sp-lg);
+}
+
+.blog-card-body h3 {
+    font-size: var(--fs-body);
+    margin-bottom: var(--sp-xs);
+    line-height: 1.4;
+}
+
+.blog-card-body p {
+    font-size: var(--fs-small);
+    margin-bottom: var(--sp-sm);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* ---- Sidebar ---- */
+.blog-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-md);
+    position: sticky;
+    top: 100px;
+}
+
+.sidebar-card {
+    padding: var(--sp-lg);
+}
+
+.sidebar-card h4 {
+    font-size: var(--fs-body);
+    margin-bottom: var(--sp-md);
+    color: var(--clr-accent);
+    font-family: var(--ff-body);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: var(--fw-semi);
+}
+
+.sidebar-card p {
+    font-size: var(--fs-small);
+}
+
+/* ---- Category List ---- */
+.category-list li a {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    font-size: var(--fs-small);
+    color: var(--clr-muted);
+    border-bottom: 1px solid var(--clr-border);
+    transition: color var(--dur-fast), padding-left var(--dur-fast);
+}
+
+.category-list li:last-child a {
+    border-bottom: none;
+}
+
+.category-list li a:hover {
+    color: var(--clr-accent);
+    padding-left: 6px;
+}
+
+.category-list li a span {
+    background: var(--clr-surface-2);
+    padding: 2px 10px;
+    border-radius: var(--radius-pill);
+    font-size: var(--fs-xs);
+}
+
+/* ---- Newsletter Card ---- */
+.newsletter-card {
+    background: rgba(201, 168, 76, .04);
+    border-color: rgba(201, 168, 76, .15);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+    .blog-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .blog-sidebar {
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .sidebar-card {
+        flex: 1;
+        min-width: 260px;
+    }
+}
+
+@media (max-width: 768px) {
+    .featured-post {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-img img {
+        min-height: 220px;
+    }
+
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .blog-sidebar {
+        flex-direction: column;
+    }
+
+    .sidebar-card {
+        min-width: auto;
+    }
+}

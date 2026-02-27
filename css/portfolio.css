@@ -1,0 +1,232 @@
+/* ========================================
+   KREON PROJECTS — Portfolio Page Styles
+   ======================================== */
+
+/* ---- Filter Tabs ---- */
+.filter-tabs {
+    display: flex;
+    justify-content: center;
+    gap: var(--sp-xs);
+    flex-wrap: wrap;
+    margin-bottom: var(--sp-xl);
+}
+
+.filter-tab {
+    padding: 10px 24px;
+    font-size: var(--fs-small);
+    font-weight: var(--fw-medium);
+    color: var(--clr-muted);
+    background: var(--clr-glass);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-pill);
+    cursor: pointer;
+    transition: all var(--dur-fast) var(--ease-smooth);
+    letter-spacing: .5px;
+}
+
+.filter-tab:hover {
+    color: var(--clr-white);
+    border-color: var(--clr-accent);
+}
+
+.filter-tab.active {
+    background: linear-gradient(135deg, var(--clr-accent), #D4AF37);
+    color: var(--clr-bg);
+    border-color: transparent;
+    font-weight: var(--fw-semi);
+}
+
+/* ---- Gallery Grid ---- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--sp-md);
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    cursor: pointer;
+    transition: opacity var(--dur-normal), transform var(--dur-normal);
+}
+
+.gallery-item img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    transition: transform var(--dur-slow) var(--ease-smooth);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.06);
+}
+
+.gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(transparent 40%, rgba(10, 10, 18, .9));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: var(--sp-lg);
+    opacity: 0;
+    transition: opacity var(--dur-normal) var(--ease-smooth);
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-overlay h3 {
+    font-size: var(--fs-body);
+    margin-bottom: 4px;
+}
+
+.gallery-overlay p {
+    font-size: var(--fs-small);
+    color: var(--clr-accent);
+}
+
+.gallery-zoom {
+    position: absolute;
+    top: var(--sp-sm);
+    right: var(--sp-sm);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-full);
+    background: rgba(201, 168, 76, .15);
+    border: 1px solid var(--clr-accent);
+    color: var(--clr-accent);
+    backdrop-filter: blur(10px);
+    transition: all var(--dur-fast);
+}
+
+.gallery-zoom:hover {
+    background: var(--clr-accent);
+    color: var(--clr-bg);
+}
+
+/* ---- Lightbox ---- */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-modal);
+    background: rgba(10, 10, 18, .95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--dur-normal);
+    backdrop-filter: blur(8px);
+}
+
+.lightbox.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.lightbox-img {
+    max-width: 85vw;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: var(--radius-md);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .5);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-full);
+    background: var(--clr-surface-2);
+    border: 1px solid var(--clr-border);
+    color: var(--clr-white);
+    cursor: pointer;
+    transition: all var(--dur-fast);
+}
+
+.lightbox-close:hover {
+    background: var(--clr-accent);
+    color: var(--clr-bg);
+}
+
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-full);
+    background: var(--clr-surface-2);
+    border: 1px solid var(--clr-border);
+    color: var(--clr-white);
+    cursor: pointer;
+    transition: all var(--dur-fast);
+}
+
+.lightbox-nav:hover {
+    background: var(--clr-accent);
+    color: var(--clr-bg);
+}
+
+.lightbox-prev {
+    left: 24px;
+}
+
+.lightbox-next {
+    right: 24px;
+}
+
+.lightbox-caption {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--ff-heading);
+    font-size: var(--fs-h3);
+    color: var(--clr-white);
+    text-align: center;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lightbox-img {
+        max-width: 95vw;
+    }
+
+    .lightbox-nav {
+        width: 36px;
+        height: 36px;
+    }
+
+    .lightbox-prev {
+        left: 10px;
+    }
+
+    .lightbox-next {
+        right: 10px;
+    }
+}

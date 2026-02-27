@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio — Kreon Projects</title>
+    <meta name="description"
+        content="Explore our portfolio of premium interior design projects. Residential, commercial, kitchen, and bedroom designs by Kreon Projects." />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/portfolio.css" />
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-inner">
+            <a href="index.html" class="nav-logo">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none">
+                    <polygon points="50,10 90,35 90,65 50,90 10,65 10,35" stroke="#C9A84C" stroke-width="3"
+                        fill="none" />
+                    <polygon points="50,25 75,40 75,60 50,75 25,60 25,40" stroke="#C9A84C" stroke-width="2"
+                        fill="rgba(201,168,76,0.1)" /><text x="50" y="57" text-anchor="middle" fill="#C9A84C"
+                        font-family="Playfair Display,serif" font-size="18" font-weight="700">K</text>
+                </svg>
+                <span>KREON PROJECTS</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="portfolio.html" class="active">Portfolio</a>
+                <a href="blog.html">Blog</a>
+                <a href="calculator.html">Cost Calculator</a>
+                <a href="contact.html" class="btn btn-primary btn-sm nav-cta">Free Consultation</a>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="bg-glow bg-glow--right"></div>
+        <div class="container">
+            <p class="breadcrumb"><a href="index.html">Home</a> / Portfolio</p>
+            <h1>Our <span class="accent-text">Portfolio</span></h1>
+            <p style="max-width:520px;margin:var(--sp-sm) auto 0;color:var(--clr-muted)">A curated collection of spaces
+                we've transformed for our clients.</p>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="section" id="portfolio-main">
+        <div class="container">
+            <!-- Filter Tabs -->
+            <div class="filter-tabs reveal" id="filterTabs">
+                <button class="filter-tab active" data-filter="all">All</button>
+                <button class="filter-tab" data-filter="living-room">Living Room</button>
+                <button class="filter-tab" data-filter="kitchen">Kitchen</button>
+                <button class="filter-tab" data-filter="bedroom">Bedroom</button>
+                <button class="filter-tab" data-filter="commercial">Commercial</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="gallery-grid" id="galleryGrid">
+                <div class="gallery-item" data-category="living-room">
+                    <img src="assets/images/portfolio-living.png" alt="Modern Living Room Design" loading="lazy" />
+                    <div class="gallery-overlay">
+                        <h3>Modern Living Room</h3>
+                        <p>Residential · Mumbai</p>
+                        <button class="gallery-zoom" aria-label="View full size">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="11" cy="11" r="8" />
+                                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                                <line x1="11" y1="8" x2="11" y2="14" />
+                                <line x1="8" y1="11" x2="14" y2="11" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="kitchen">
+                    <img src="assets/images/portfolio-kitchen.png" alt="Luxury Kitchen Design" loading="lazy" />
+                    <div class="gallery-overlay">
+                        <h3>Luxury Modular Kitchen</h3>
+                        <p>Residential · Delhi</p>
+                        <button class="gallery-zoom" aria-label="View full size">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="11" cy="11" r="8" />
+                                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                                <line x1="11" y1="8" x2="11" y2="14" />
+                                <line x1="8" y1="11" x2="14" y2="11" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="bedroom">
+                    <img src="assets/images/portfolio-bedroom.png" alt="Master Bedroom Design" loading="lazy" />
+                    <div class="gallery-overlay">
+                        <h3>Serene Master Bedroom</h3>
+                        <p>Residential · Bangalore</p>
+                        <button class="gallery-zoom" aria-label="View full size">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="11" cy="11" r="8" />
+                                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                                <line x1="11" y1="8" x2="11" y2="14" />
+                                <line x1="8" y1="11" x2="14" y2="11" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="commercial">
+                    <img src="assets/images/portfolio-commercial.png" alt="Corporate Office Design" loading="lazy" />
+                    <div class="gallery-overlay">
+                        <h3>Modern Corporate Office</h3>
+                        <p>Commercial · Pune</p>
+                        <button class="gallery-zoom" aria-label="View full size">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="11" cy="11" r="8" />
+                                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                                <line x1="11" y1="8" x2="11" y2="14" />
+                                <line x1="8" y1="11" x2="14" y2="11" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="living-room">
+                    <img src="assets/images/hero-home.png" alt="Premium Living Space" loading="lazy" />
+                    <div class="gallery-overlay">
+                        <h3>Premium Living Space</h3>
+                        <p>Residential · Hyderabad</p>
+                        <button class="gallery-zoom" aria-label="View full size">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="11" cy="11" r="8" />
+                                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                                <line x1="11" y1="8" x2="11" y2="14" />
+                                <line x1="8" y1="11" x2="14" y2="11" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="kitchen">
+                    <img src="assets/images/portfolio-kitchen.png" alt="Island Kitchen Design" loading="lazy" />
+                    <div class="gallery-overlay">
+                        <h3>Island Kitchen Setup</h3>
+                        <p>Residential · Chennai</p>
+                        <button class="gallery-zoom" aria-label="View full size">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="11" cy="11" r="8" />
+                                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                                <line x1="11" y1="8" x2="11" y2="14" />
+                                <line x1="8" y1="11" x2="14" y2="11" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+        </button>
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6" />
+            </svg>
+        </button>
+        <img src="" alt="" class="lightbox-img" id="lightboxImg" />
+        <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6" />
+            </svg>
+        </button>
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+
+    <!-- CTA -->
+    <section class="section">
+        <div class="container">
+            <div class="cta-banner reveal">
+                <h2>Love What You See?</h2>
+                <p>Let's create your dream space together. Get started with a free design consultation.</p>
+                <a href="contact.html" class="btn btn-primary">Start Your Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand"><a href="index.html" class="nav-logo" style="margin-bottom:var(--sp-sm)"><svg
+                            width="36" height="36" viewBox="0 0 100 100" fill="none">
+                            <polygon points="50,10 90,35 90,65 50,90 10,65 10,35" stroke="#C9A84C" stroke-width="3"
+                                fill="none" /><text x="50" y="57" text-anchor="middle" fill="#C9A84C"
+                                font-family="Playfair Display,serif" font-size="18" font-weight="700">K</text>
+                        </svg><span>KREON PROJECTS</span></a>
+                    <p>Premium interior design solutions that transform spaces into extraordinary experiences.</p>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="calculator.html">Cost Calculator</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Residential</a></li>
+                        <li><a href="services.html">Commercial</a></li>
+                        <li><a href="services.html">Modular Kitchen</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Get In Touch</h4>
+                    <ul class="footer-contact">
+                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72" />
+                            </svg><span>+91 9608219713</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Kreon Projects. All rights reserved.</p>
+                <div class="footer-socials"><a href="#" aria-label="Instagram"><svg width="18" height="18"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                        </svg></a><a href="https://wa.me/919608219713" aria-label="WhatsApp" target="_blank"><svg
+                            width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                        </svg></a></div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING CTA -->
+    <a href="contact.html" class="floating-cta" id="floatingCta">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72" />
+        </svg>
+        Get Free Consultation
+    </a>
+
+    <script src="js/main.js"></script>
+    <script>
+        // ---- Filter ----
+        const tabs = document.querySelectorAll('.filter-tab');
+        const items = document.querySelectorAll('.gallery-item');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                const filter = tab.dataset.filter;
+                items.forEach(item => {
+                    const match = filter === 'all' || item.dataset.category === filter;
+                    item.style.opacity = match ? '1' : '0';
+                    item.style.transform = match ? 'scale(1)' : 'scale(0.8)';
+                    setTimeout(() => {
+                        item.style.display = match ? '' : 'none';
+                    }, match ? 0 : 350);
+                    if (match) item.style.display = '';
+                });
+            });
+        });
+
+        // ---- Lightbox ----
+        const lightbox = document.getElementById('lightbox');
+        const lbImg = document.getElementById('lightboxImg');
+        const lbCaption = document.getElementById('lightboxCaption');
+        let currentLb = 0;
+        let lbItems = [];
+
+        function openLightbox(index) {
+            lbItems = Array.from(document.querySelectorAll('.gallery-item:not([style*="display: none"])'));
+            currentLb = index;
+            updateLightbox();
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function updateLightbox() {
+            const item = lbItems[currentLb];
+            lbImg.src = item.querySelector('img').src;
+            lbCaption.textContent = item.querySelector('h3').textContent;
+        }
+
+        document.querySelectorAll('.gallery-item').forEach((item, i) => {
+            item.addEventListener('click', () => {
+                const visibleItems = Array.from(document.querySelectorAll('.gallery-item:not([style*="display: none"])'));
+                const idx = visibleItems.indexOf(item);
+                openLightbox(idx >= 0 ? idx : 0);
+            });
+        });
+
+        document.getElementById('lightboxClose').addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        document.getElementById('lightboxPrev').addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentLb = (currentLb - 1 + lbItems.length) % lbItems.length;
+            updateLightbox();
+        });
+
+        document.getElementById('lightboxNext').addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentLb = (currentLb + 1) % lbItems.length;
+            updateLightbox();
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') { lightbox.classList.remove('active'); document.body.style.overflow = ''; }
+            if (e.key === 'ArrowLeft') { currentLb = (currentLb - 1 + lbItems.length) % lbItems.length; updateLightbox(); }
+            if (e.key === 'ArrowRight') { currentLb = (currentLb + 1) % lbItems.length; updateLightbox(); }
+        });
+    </script>
+</body>
+
+</html>

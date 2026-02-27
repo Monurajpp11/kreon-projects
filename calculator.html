@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Cost Calculator — Kreon Projects</title>
+    <meta name="description"
+        content="Estimate your interior design project cost instantly with our premium 3D cost calculator. Get real-time pricing for every room." />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/calculator.css" />
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-inner">
+            <a href="index.html" class="nav-logo">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none">
+                    <polygon points="50,10 90,35 90,65 50,90 10,65 10,35" stroke="#C9A84C" stroke-width="3"
+                        fill="none" />
+                    <polygon points="50,25 75,40 75,60 50,75 25,60 25,40" stroke="#C9A84C" stroke-width="2"
+                        fill="rgba(201,168,76,0.1)" /><text x="50" y="57" text-anchor="middle" fill="#C9A84C"
+                        font-family="Playfair Display,serif" font-size="18" font-weight="700">K</text>
+                </svg>
+                <span>KREON PROJECTS</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="blog.html">Blog</a>
+                <a href="calculator.html" class="active">Cost Calculator</a>
+                <a href="contact.html" class="btn btn-primary btn-sm nav-cta">Free Consultation</a>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="bg-glow bg-glow--left"></div>
+        <div class="container">
+            <p class="breadcrumb"><a href="index.html">Home</a> / Cost Calculator</p>
+            <h1>3D Cost <span class="accent-text">Calculator</span></h1>
+            <p style="max-width:560px;margin:var(--sp-sm) auto 0;color:var(--clr-muted)">Get an instant estimate for
+                your interior design project. Adjust the options and watch the cost update in real time.</p>
+        </div>
+    </section>
+
+    <!-- CALCULATOR -->
+    <section class="section" id="calculator-section">
+        <div class="container">
+            <div class="calc-layout">
+
+                <!-- LEFT: 3D Room Preview -->
+                <div class="calc-preview glass-card reveal">
+                    <div class="room-3d" id="room3d">
+                        <!-- CSS 3D isometric room -->
+                        <div class="room-scene" id="roomScene">
+                            <div class="room-floor" id="roomFloor"></div>
+                            <div class="room-wall-back" id="wallBack"></div>
+                            <div class="room-wall-left" id="wallLeft"></div>
+                            <!-- Furniture items -->
+                            <div class="room-furniture sofa" id="furnitureSofa">
+                                <div class="furniture-label">Sofa</div>
+                            </div>
+                            <div class="room-furniture table" id="furnitureTable">
+                                <div class="furniture-label">Table</div>
+                            </div>
+                            <div class="room-furniture cabinet" id="furnitureCabinet">
+                                <div class="furniture-label">Cabinet</div>
+                            </div>
+                            <div class="room-furniture light-fixture" id="furnitureLight">
+                                <div class="furniture-label">Lighting</div>
+                            </div>
+                        </div>
+
+                        <!-- Quality indicator -->
+                        <div class="quality-badge" id="qualityBadge">
+                            <span class="quality-icon">✦</span>
+                            <span class="quality-text" id="qualityText">Standard</span>
+                        </div>
+                    </div>
+
+                    <!-- Live Cost Display -->
+                    <div class="live-cost">
+                        <p class="live-cost-label">Estimated Cost</p>
+                        <div class="live-cost-amount">
+                            <span class="currency">₹</span>
+                            <span class="amount" id="totalCost">0</span>
+                        </div>
+                        <p class="live-cost-note">*Indicative pricing. Actual cost may vary.</p>
+                    </div>
+                </div>
+
+                <!-- RIGHT: Controls -->
+                <div class="calc-controls reveal">
+
+                    <!-- Room Type -->
+                    <div class="glass-card calc-card">
+                        <h3 class="calc-card-title">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                            </svg>
+                            Room Type
+                        </h3>
+                        <div class="room-type-grid" id="roomTypeGrid">
+                            <button class="room-type-btn active" data-room="living" data-base="850">
+                                <span class="room-emoji">🛋️</span>
+                                <span>Living Room</span>
+                            </button>
+                            <button class="room-type-btn" data-room="bedroom" data-base="750">
+                                <span class="room-emoji">🛏️</span>
+                                <span>Bedroom</span>
+                            </button>
+                            <button class="room-type-btn" data-room="kitchen" data-base="1200">
+                                <span class="room-emoji">🍳</span>
+                                <span>Kitchen</span>
+                            </button>
+                            <button class="room-type-btn" data-room="bathroom" data-base="1100">
+                                <span class="room-emoji">🚿</span>
+                                <span>Bathroom</span>
+                            </button>
+                            <button class="room-type-btn" data-room="office" data-base="900">
+                                <span class="room-emoji">💼</span>
+                                <span>Office</span>
+                            </button>
+                            <button class="room-type-btn" data-room="complete" data-base="700">
+                                <span class="room-emoji">🏠</span>
+                                <span>Full Home</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Area -->
+                    <div class="glass-card calc-card">
+                        <h3 class="calc-card-title">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                            </svg>
+                            Area (sq. ft.)
+                        </h3>
+                        <div class="area-control">
+                            <input type="range" id="areaSlider" min="100" max="5000" value="500" step="50" />
+                            <div class="area-display">
+                                <span class="area-value" id="areaValue">500</span>
+                                <span class="area-unit">sq. ft.</span>
+                            </div>
+                        </div>
+                        <div class="area-presets">
+                            <button class="preset-btn" data-area="200">200</button>
+                            <button class="preset-btn active" data-area="500">500</button>
+                            <button class="preset-btn" data-area="1000">1000</button>
+                            <button class="preset-btn" data-area="2000">2000</button>
+                            <button class="preset-btn" data-area="3000">3000</button>
+                        </div>
+                    </div>
+
+                    <!-- Quality Tier -->
+                    <div class="glass-card calc-card">
+                        <h3 class="calc-card-title">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            Quality Tier
+                        </h3>
+                        <div class="quality-options" id="qualityOptions">
+                            <label class="quality-option active">
+                                <input type="radio" name="quality" value="1" checked />
+                                <div class="quality-card">
+                                    <div class="quality-level">Standard</div>
+                                    <div class="quality-price">1x Base</div>
+                                    <div class="quality-desc">Quality materials, functional design</div>
+                                </div>
+                            </label>
+                            <label class="quality-option">
+                                <input type="radio" name="quality" value="1.6" />
+                                <div class="quality-card">
+                                    <div class="quality-level">Premium</div>
+                                    <div class="quality-price">1.6x Base</div>
+                                    <div class="quality-desc">Premium hardware, curated finishes</div>
+                                </div>
+                            </label>
+                            <label class="quality-option">
+                                <input type="radio" name="quality" value="2.5" />
+                                <div class="quality-card">
+                                    <div class="quality-level">Luxury</div>
+                                    <div class="quality-price">2.5x Base</div>
+                                    <div class="quality-desc">Imported materials, bespoke design</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Add-ons -->
+                    <div class="glass-card calc-card">
+                        <h3 class="calc-card-title">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M12 5v14M5 12h14" />
+                            </svg>
+                            Add-ons
+                        </h3>
+                        <div class="addons-list" id="addonsList">
+                            <label class="addon-item">
+                                <input type="checkbox" data-cost="25000" />
+                                <span class="addon-check"></span>
+                                <div class="addon-info">
+                                    <span class="addon-name">False Ceiling</span>
+                                    <span class="addon-price">+ ₹25,000</span>
+                                </div>
+                            </label>
+                            <label class="addon-item">
+                                <input type="checkbox" data-cost="35000" />
+                                <span class="addon-check"></span>
+                                <div class="addon-info">
+                                    <span class="addon-name">Smart Lighting</span>
+                                    <span class="addon-price">+ ₹35,000</span>
+                                </div>
+                            </label>
+                            <label class="addon-item">
+                                <input type="checkbox" data-cost="20000" />
+                                <span class="addon-check"></span>
+                                <div class="addon-info">
+                                    <span class="addon-name">Wallpaper & Textures</span>
+                                    <span class="addon-price">+ ₹20,000</span>
+                                </div>
+                            </label>
+                            <label class="addon-item">
+                                <input type="checkbox" data-cost="45000" />
+                                <span class="addon-check"></span>
+                                <div class="addon-info">
+                                    <span class="addon-name">Premium Flooring</span>
+                                    <span class="addon-price">+ ₹45,000</span>
+                                </div>
+                            </label>
+                            <label class="addon-item">
+                                <input type="checkbox" data-cost="15000" />
+                                <span class="addon-check"></span>
+                                <div class="addon-info">
+                                    <span class="addon-name">Window Treatments</span>
+                                    <span class="addon-price">+ ₹15,000</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COST BREAKDOWN -->
+            <div class="breakdown-section glass-card reveal" id="breakdownSection">
+                <h3 class="calc-card-title" style="margin-bottom:var(--sp-md)">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="8" y1="6" x2="21" y2="6" />
+                        <line x1="8" y1="12" x2="21" y2="12" />
+                        <line x1="8" y1="18" x2="21" y2="18" />
+                        <line x1="3" y1="6" x2="3.01" y2="6" />
+                        <line x1="3" y1="12" x2="3.01" y2="12" />
+                        <line x1="3" y1="18" x2="3.01" y2="18" />
+                    </svg>
+                    Cost Breakdown
+                </h3>
+                <div class="breakdown-grid">
+                    <div class="breakdown-item">
+                        <div class="breakdown-bar" id="barMaterial" style="--bar-pct:40%"></div>
+                        <span class="breakdown-label">Materials</span>
+                        <span class="breakdown-amount" id="costMaterial">₹0</span>
+                        <span class="breakdown-pct" id="pctMaterial">40%</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-bar" id="barLabour" style="--bar-pct:25%"></div>
+                        <span class="breakdown-label">Labour</span>
+                        <span class="breakdown-amount" id="costLabour">₹0</span>
+                        <span class="breakdown-pct" id="pctLabour">25%</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-bar" id="barFurnishing" style="--bar-pct:20%"></div>
+                        <span class="breakdown-label">Furnishing</span>
+                        <span class="breakdown-amount" id="costFurnishing">₹0</span>
+                        <span class="breakdown-pct" id="pctFurnishing">20%</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-bar" id="barOverhead" style="--bar-pct:15%"></div>
+                        <span class="breakdown-label">Design & Overhead</span>
+                        <span class="breakdown-amount" id="costOverhead">₹0</span>
+                        <span class="breakdown-pct" id="pctOverhead">15%</span>
+                    </div>
+                </div>
+
+                <div class="breakdown-total">
+                    <span>Total Estimated Cost</span>
+                    <span class="breakdown-total-amount" id="totalCostFull">₹0</span>
+                </div>
+
+                <div style="text-align:center;margin-top:var(--sp-lg)">
+                    <a href="#" class="btn btn-primary" id="getQuoteBtn">Get Detailed Quote</a>
+                    <p style="font-size:var(--fs-xs);color:var(--clr-muted);margin-top:var(--sp-xs)">Redirects to our
+                        contact form with your estimate details</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand"><a href="index.html" class="nav-logo" style="margin-bottom:var(--sp-sm)"><svg
+                            width="36" height="36" viewBox="0 0 100 100" fill="none">
+                            <polygon points="50,10 90,35 90,65 50,90 10,65 10,35" stroke="#C9A84C" stroke-width="3"
+                                fill="none" /><text x="50" y="57" text-anchor="middle" fill="#C9A84C"
+                                font-family="Playfair Display,serif" font-size="18" font-weight="700">K</text>
+                        </svg><span>KREON PROJECTS</span></a>
+                    <p>Premium interior design solutions that transform spaces into extraordinary experiences.</p>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="calculator.html">Cost Calculator</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Residential</a></li>
+                        <li><a href="services.html">Commercial</a></li>
+                        <li><a href="services.html">Modular Kitchen</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Get In Touch</h4>
+                    <ul class="footer-contact">
+                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72" />
+                            </svg><span>+91 9608219713</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Kreon Projects. All rights reserved.</p>
+                <div class="footer-socials"><a href="#" aria-label="Instagram"><svg width="18" height="18"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                        </svg></a><a href="https://wa.me/919608219713" aria-label="WhatsApp" target="_blank"><svg
+                            width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                        </svg></a></div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING CTA -->
+    <a href="contact.html" class="floating-cta" id="floatingCta">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72" />
+        </svg>
+        Get Free Consultation
+    </a>
+
+    <script src="js/main.js"></script>
+    <script src="js/calculator.js"></script>
+</body>
+
+</html>
