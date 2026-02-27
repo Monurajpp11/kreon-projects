@@ -1,11 +1,13 @@
 /* ========================================
    KREON PROJECTS — Home Page Styles
+   Fully Responsive: iPhone SE → Ultra-wide
    ======================================== */
 
 /* ---- Hero ---- */
 .hero {
     position: relative;
     min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -379,10 +381,60 @@
     border-radius: 5px;
 }
 
-/* ---- Responsive ---- */
-@media (max-width: 900px) {
+/* ========================================
+   RESPONSIVE — Home Page
+   ======================================== */
+
+/* ---- iPad Pro Landscape / Small Desktop (1024-1279px) ---- */
+@media (max-width: 1279px) {
+    .hero-content {
+        max-width: 620px;
+    }
+
+    .hero-stat-num {
+        font-size: 2.2rem;
+    }
+
     .hero-stats {
         gap: var(--sp-lg);
+    }
+}
+
+/* ---- Tablet / iPad Portrait (768-1023px) ---- */
+@media (max-width: 1023px) {
+    .hero {
+        min-height: 100vh;
+        min-height: 100dvh;
+        align-items: flex-end;
+    }
+
+    .hero-overlay {
+        background: linear-gradient(to top,
+                rgba(10, 10, 18, .95) 0%,
+                rgba(10, 10, 18, .8) 40%,
+                rgba(10, 10, 18, .4) 100%);
+    }
+
+    .hero-content {
+        max-width: 100%;
+        padding: 0 0 var(--sp-xl);
+    }
+
+    .hero-title {
+        font-size: clamp(2.2rem, 5vw, 3.5rem);
+    }
+
+    .hero-desc {
+        max-width: 100%;
+        font-size: 1rem;
+    }
+
+    .hero-stats {
+        gap: var(--sp-lg);
+    }
+
+    .hero-stat-num {
+        font-size: 2rem;
     }
 
     .why-grid {
@@ -391,33 +443,324 @@
 
     .why-image {
         order: -1;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .why-image-frame {
+        top: 12px;
+        left: 12px;
+        right: -12px;
+        bottom: -12px;
     }
 
     .portfolio-peek-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-}
-
-@media (max-width: 600px) {
-    .hero-content {
-        padding: calc(var(--sp-xxl) + 40px) 0 var(--sp-xl);
-    }
-
-    .hero-stats {
-        flex-direction: column;
-        gap: var(--sp-md);
-    }
 
     .hero-scroll {
         display: none;
     }
+}
+
+/* ---- Large Phone (640-767px) ---- */
+@media (max-width: 767px) {
+    .hero-title {
+        font-size: clamp(2rem, 7vw, 3rem);
+    }
+
+    .hero-desc {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
 
     .hero-btns {
         flex-direction: column;
+        gap: var(--sp-xs);
     }
 
     .hero-btns .btn {
         width: 100%;
         text-align: center;
+        justify-content: center;
+        padding: 16px 24px;
+    }
+
+    .hero-stats {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: var(--sp-md);
+        justify-content: space-between;
+    }
+
+    .hero-stat {
+        flex: 1 1 30%;
+        min-width: 80px;
+        text-align: center;
+    }
+
+    .hero-stat-num {
+        font-size: 1.8rem;
+    }
+
+    .hero-stat-label {
+        font-size: 10px;
+        letter-spacing: .5px;
+    }
+
+    /* Service cards */
+    .service-card {
+        padding: var(--sp-lg) var(--sp-md);
+    }
+
+    .service-icon {
+        width: 64px;
+        height: 64px;
+    }
+
+    .service-icon svg {
+        width: 36px;
+        height: 36px;
+    }
+
+    /* Testimonial */
+    .testimonial-card {
+        padding: var(--sp-lg) var(--sp-sm);
+    }
+
+    .testimonial-text {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .testimonial-stars {
+        font-size: 1.2rem;
+        letter-spacing: 3px;
+    }
+}
+
+/* ---- Phone (480-639px) ---- */
+@media (max-width: 639px) {
+    .hero {
+        align-items: flex-end;
+    }
+
+    .hero-overlay {
+        background: linear-gradient(to top,
+                rgba(10, 10, 18, .95) 0%,
+                rgba(10, 10, 18, .85) 35%,
+                rgba(10, 10, 18, .5) 70%,
+                rgba(10, 10, 18, .3) 100%);
+    }
+
+    .hero-content {
+        padding: 0 0 var(--sp-lg);
+        max-width: 100%;
+    }
+
+    .hero-subtitle {
+        font-size: 11px;
+        letter-spacing: 3px;
+        margin-bottom: var(--sp-xs);
+    }
+
+    .hero-title {
+        font-size: clamp(1.8rem, 8vw, 2.6rem);
+        margin-bottom: var(--sp-sm);
+    }
+
+    .hero-desc {
+        font-size: 0.9rem;
+        line-height: 1.7;
+        margin-bottom: var(--sp-md);
+    }
+
+    .hero-btns {
+        margin-bottom: var(--sp-lg);
+    }
+
+    .hero-btns .btn {
+        padding: 14px 20px;
+        font-size: var(--fs-xs);
+    }
+
+    .hero-stats {
+        padding-top: var(--sp-md);
+    }
+
+    /* Why choose us */
+    .why-image {
+        max-width: 100%;
+    }
+
+    .why-image img {
+        aspect-ratio: 16/10;
+    }
+
+    .why-image-frame {
+        display: none;
+    }
+
+    .why-content h2 {
+        font-size: clamp(1.4rem, 5vw, 2rem);
+    }
+
+    .why-feature {
+        font-size: var(--fs-small);
+    }
+
+    /* Portfolio grid on phone */
+    .portfolio-peek-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--sp-xs);
+    }
+
+    .portfolio-peek-item img {
+        aspect-ratio: 1/1;
+    }
+
+    .portfolio-peek-item::after {
+        padding: var(--sp-sm) var(--sp-xs);
+        font-size: var(--fs-small);
+    }
+
+    /* Testimonial compact */
+    .testimonial-text {
+        font-size: var(--fs-small);
+    }
+
+    .testimonial-avatar {
+        width: 40px;
+        height: 40px;
+        font-size: var(--fs-xs);
+    }
+}
+
+/* ---- Small Phone / iPhone SE (320-479px) ---- */
+@media (max-width: 479px) {
+    .hero-title {
+        font-size: clamp(1.6rem, 9vw, 2.2rem);
+    }
+
+    .hero-desc {
+        font-size: 0.85rem;
+    }
+
+    .hero-stats {
+        flex-direction: column;
+        gap: var(--sp-sm);
+        align-items: stretch;
+    }
+
+    .hero-stat {
+        flex: 1 1 100%;
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        text-align: left;
+    }
+
+    .hero-stat-num {
+        font-size: 1.6rem;
+        min-width: 70px;
+    }
+
+    .hero-stat-label {
+        font-size: 11px;
+    }
+
+    .hero-btns .btn {
+        font-size: 11px;
+        padding: 13px 16px;
+        letter-spacing: .8px;
+    }
+
+    .service-card {
+        padding: var(--sp-md);
+    }
+
+    .service-icon {
+        width: 56px;
+        height: 56px;
+    }
+
+    .service-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .service-card h3 {
+        font-size: var(--fs-body);
+    }
+
+    .service-card p {
+        font-size: var(--fs-xs);
+    }
+
+    .portfolio-peek-grid {
+        gap: 6px;
+    }
+
+    .portfolio-peek-item::after {
+        font-size: var(--fs-xs);
+        padding: var(--sp-xs);
+    }
+
+    .testimonial-card {
+        padding: var(--sp-md) var(--sp-xs);
+    }
+
+    .testimonial-btn {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+/* ---- Landscape Phone ---- */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: 90px 0 30px;
+        align-items: center;
+    }
+
+    .hero-overlay {
+        background: linear-gradient(to right,
+                rgba(10, 10, 18, .92) 0%,
+                rgba(10, 10, 18, .7) 50%,
+                rgba(10, 10, 18, .4) 100%);
+    }
+
+    .hero-content {
+        padding: 0;
+    }
+
+    .hero-btns {
+        flex-direction: row;
+        margin-bottom: var(--sp-md);
+    }
+
+    .hero-btns .btn {
+        width: auto;
+    }
+
+    .hero-stats {
+        flex-direction: row;
+    }
+}
+
+/* ---- Touch device — disable hover effects ---- */
+@media (hover: none) and (pointer: coarse) {
+    .portfolio-peek-item:hover img {
+        transform: none;
+    }
+
+    .glass-card:hover {
+        transform: none;
+    }
+
+    /* Always show portfolio labels on touch */
+    .portfolio-peek-item::after {
+        opacity: 1;
     }
 }
